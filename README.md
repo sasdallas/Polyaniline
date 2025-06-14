@@ -7,10 +7,10 @@ This bootloader is developed on and off along with Ethereal.
 
 ## Screenshots
 
-![Main menu](https://github.com/user-attachments/assets/6de6b158-9755-4f4c-bd3a-93ea2f4f36c7)\
+![Main menu](https://github.com/user-attachments/assets/deea5701-942e-43da-b6ff-2bb25e3ebadf)\
 *Polyaniline at the main menu*
 
-![Config menu](https://github.com/user-attachments/assets/cf53b991-4253-47bf-b75f-4d94aa4be052)
+![Config menu](https://github.com/user-attachments/assets/7765da71-e5a2-424c-a080-7470b2554ecd)\
 *Polyaniline at the configure menu*
 
 ## Building
