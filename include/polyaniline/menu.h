@@ -33,7 +33,7 @@
 #define OPTION_TYPE_SELECT      2
 
 /* Default titlebar stuff */
-#define TITLEBAR_DEFAULT_COLOR  RGB(0, 0, 125)
+#define TITLEBAR_DEFAULT_COLOR  RGB(40, 1, 56)
 
 /**** TYPES ****/
 

@@ -108,7 +108,7 @@ void polyaniline_copyright() {
             __polyaniline_build_type,
             __polyaniline_version_codename);
 
-    terminal_printCentered("(C) reduceOS 2025 - https://github.com/sasdallas/reduceOS");
+    terminal_printCentered("(C) Ethereal 2025 - https://github.com/sasdallas/Ethereal");
     terminal_setXY(prev_x, prev_y);
     terminal_setForeground(BOOT_DEFAULT_FG);
 }
@@ -124,24 +124,24 @@ void polyaniline_configureOS() {
     terminal_drawTestTube(BOOT_LIQUID_NORMAL);
     polyaniline_copyright();
 
-    menu_drawTitleBar(TITLEBAR_DEFAULT_COLOR, "reduceOS configuration manager");
+    menu_drawTitleBar(TITLEBAR_DEFAULT_COLOR, "Ethereal configuration manager");
     terminal_y++;
 
     OPTIONS_START(); 
-    OPTION_SELECT("Start reduceOS", "Load reduceOS with the specified options", NULL);
+    OPTION_SELECT("Start Ethereal", "Load Ethereal with the specified options", NULL);
     OPTION_SELECT("Edit command line", "Opens an editor for you to edit the command line on", NULL);
     OPTION_SELECT("Edit drivers", "Edits any drivers that might need to be modified", "This will mount the initial ramdisk to get the driver list");
     OPTION_SELECT("", NULL, NULL); // Blank
     
-    memcpy((void*)options + ((optcount+(pages*MAX_PAGES))*sizeof(option_t)), reduce_os_options, sizeof(reduce_os_options));
-    optcount += sizeof(reduce_os_options) / sizeof(option_t);
+    memcpy((void*)options + ((optcount+(pages*MAX_PAGES))*sizeof(option_t)), ethereal_options, sizeof(ethereal_options));
+    optcount += sizeof(ethereal_options) / sizeof(option_t);
 
     OPTIONS_LOOP();
 
 
     switch (selected) {
         case 0:
-            // Start reduceOS by breaking
+            // Start Ethereal by breaking
             break;
 
         case 1:
@@ -206,8 +206,8 @@ void polyaniline_bootChoice() {
 
     OPTIONS_START();
 
-    OPTION_SELECT("Start reduceOS", "Load reduceOS with the default options", NULL);
-    OPTION_SELECT("Configure reduceOS", "Configure and then load reduceOS using the built-in", "Polyaniline editor");
+    OPTION_SELECT("Start Ethereal", "Load Ethereal with the default options", NULL);
+    OPTION_SELECT("Configure Ethereal", "Configure and then load Ethereal using the built-in", "Polyaniline editor");
     OPTION_SELECT("Load custom ELF file", "Load a custom ELF file (Multiboot1 only)", NULL);
     OPTION_SELECT("Restart system", "Restart the system", NULL);
 
@@ -215,13 +215,13 @@ void polyaniline_bootChoice() {
 
     switch (selected) {
         case 0:
-            // Start reduceOS
+            // Start Ethereal
             platform_boot((char*)__polyaniline_default_kernel_cmdline);
-            polyaniline_error("platform_boot(): Failed to start reduceOS\n");
+            polyaniline_error("platform_boot(): Failed to start Ethereal\n");
             break;
 
         case 1:
-            // Configure reduceOS - launch OS configuration menu, where the user will return if they want to go back
+            // Configure Ethereal - launch OS configuration menu, where the user will return if they want to go back
             polyaniline_configureOS();
             polyaniline_bootChoice();
             break;

@@ -20,20 +20,20 @@
 #include <stddef.h>
 
 /**** DEFINITIONS ****/
-#define REDUCEOS_CONFIG(n,s1,s2,cmdline,d,i) (option_t){ .name = n, .subtitle1 = s1, .subtitle2 = s2, .type = OPTION_TYPE_CHECKBOX, .enabled = d, .data = (void*)((char*)(cmdline " ")), .inv = i }
+#define ETHEREAL_CONFIG(n,s1,s2,cmdline,d,i) (option_t){ .name = n, .subtitle1 = s1, .subtitle2 = s2, .type = OPTION_TYPE_CHECKBOX, .enabled = d, .data = (void*)((char*)(cmdline " ")), .inv = i }
 
 /**** VARIABLES ****/
 
-option_t reduce_os_options[] = {
-    REDUCEOS_CONFIG("Enable reduceOS Polyaniline support", "Configures whether the kernel is told it is being loaded by Polyaniline", "This mainly controls RSDP passing, which is Multiboot incompliant.", "--use-polyaniline", 1, 0),
-    REDUCEOS_CONFIG("Debug Console", "Enable/disable redirecting debug logs to console", "Will flood the logs", "--debug=console", 0, 0),
-    REDUCEOS_CONFIG("Enable SMP", "Enable/disable SMP support", "If disabled, the SMP subsystem will only run to collect necessary data", "--disable-smp", 0, 1),
-    REDUCEOS_CONFIG("ACPI Support", "Enable/disable ACPI support in Hexahedron (minacpi + ACPICA)", "Recommended to disable for systems that fail to initialize video (disables SMP)", "--no-acpi", 0, 1),
-    REDUCEOS_CONFIG("ACPICA Support", "Enable/disable ACPICA support in Hexahedron", "minacpi will be used as a backup if ACPICA is disabled", "--no-acpica", 0, 1),
-    REDUCEOS_CONFIG("Disable initial video support", "Controls whether Hexahedron initializes the video system.", "WARNING: Any drivers that attempt to initialize the video system may crash the system. Take caution.", "--no-video", 0, 0),
-    REDUCEOS_CONFIG("Disable PSF font usage", "Disables usage of the ramdisk PC screen font", NULL, "--no-psf-font", 0, 0),
-    REDUCEOS_CONFIG("Disable all drivers", "Disables usage of all drivers", "(NOT RECOMMENDED)", "--no-load-drivers", 0, 0),
-    REDUCEOS_CONFIG("PS/2: Test controllers", "Enable/disable support for testing PS/2 controllers", "Only works if ps2.sys is loaded", "--ps2-disable-tests", 0, 0)
+option_t ethereal_options[] = {
+    ETHEREAL_CONFIG("Enable Ethereal Polyaniline support", "Configures whether the kernel is told it is being loaded by Polyaniline", "This mainly controls RSDP passing, which is Multiboot incompliant.", "--use-polyaniline", 1, 0),
+    ETHEREAL_CONFIG("Debug Console", "Enable/disable redirecting debug logs to console", "Will flood the logs", "--debug=console", 0, 0),
+    ETHEREAL_CONFIG("Enable SMP", "Enable/disable SMP support", "If disabled, the SMP subsystem will only run to collect necessary data", "--disable-smp", 0, 1),
+    ETHEREAL_CONFIG("ACPI Support", "Enable/disable ACPI support in Hexahedron (minacpi + ACPICA)", "Recommended to disable for systems that fail to initialize video (disables SMP)", "--no-acpi", 0, 1),
+    ETHEREAL_CONFIG("ACPICA Support", "Enable/disable ACPICA support in Hexahedron", "minacpi will be used as a backup if ACPICA is disabled", "--no-acpica", 0, 1),
+    ETHEREAL_CONFIG("Disable initial video support", "Controls whether Hexahedron initializes the video system.", "WARNING: Any drivers that attempt to initialize the video system may crash the system. Take caution.", "--no-video", 0, 0),
+    ETHEREAL_CONFIG("Disable PSF font usage", "Disables usage of the ramdisk PC screen font", NULL, "--no-psf-font", 0, 0),
+    ETHEREAL_CONFIG("Disable all drivers", "Disables usage of all drivers", "(NOT RECOMMENDED)", "--no-load-drivers", 0, 0),
+    ETHEREAL_CONFIG("PS/2: Test controllers", "Enable/disable support for testing PS/2 controllers", "Only works if ps2.sys is loaded", "--ps2-disable-tests", 0, 0)
 };
 
 #endif
