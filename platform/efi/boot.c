@@ -5,7 +5,7 @@
  * 
  * @copyright
  * This file is part of the Polyaniline bootloader, which is part of the Ethereal Operating System.
- * It is released under the terms of the GPLv3 license, unlike other parts of Ethereal.
+ * It is released under the terms of the BSD 3-clause license.
  * Please see the LICENSE file in the main repository for more details.
  * 
  * Copyright (C) 2024 Samuel Stuart
@@ -119,8 +119,7 @@ uintptr_t platform_loadKernel() {
  * @param initrd_end End of initrd
  */
 uintptr_t platform_loadInitrd(uintptr_t *initrd_start, uintptr_t *initrd_end) {
-    // We want to get the simple filesystem protocol f
-CCS=0000000000000000 CCD=0000000000000001 CCO=EFLAGS managing files
+    // We want to get the simple filesystem protocol for managing files
     EFI_STATUS status;
     EFI_GUID fs_guid = EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID;
     EFI_SIMPLE_FILE_SYSTEM_PROTOCOL *fs_protocol;
