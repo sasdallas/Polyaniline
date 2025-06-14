@@ -1,3 +1,5 @@
 build-output/
 .gdb_history
 platform/bios/*
+emu-files/hexahedron-kernel.elf
+emu-files/initrd.tar.img

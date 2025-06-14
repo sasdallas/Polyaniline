@@ -9,7 +9,7 @@ OUTDIR=$1
 
 
 # Calculate required space
-SPACE_REQ=$(du -sb "/home/samuel/Desktop/reduceOS/build-output/sysroot/boot/" | cut -f 1)
+SPACE_REQ=$(du -sb "$(pwd)/emu-files/" | cut -f 1)
 let "SIZE = ($SPACE_REQ / 940000)"
 echo $SIZE
 
@@ -30,8 +30,8 @@ mmd -i $OUTDIR/efi_fat.img ::/EFI
 mmd -i $OUTDIR/efi_fat.img ::/EFI/BOOT 
 mcopy -i $OUTDIR/efi_fat.img $OUTDIR/bootx64.efi ::/EFI/BOOT
 
-mcopy -i $OUTDIR/efi_fat.img /home/samuel/Desktop/reduceOS/build-output/sysroot/boot/hexahedron-kernel.elf ::
-mcopy -i $OUTDIR/efi_fat.img /home/samuel/Desktop/reduceOS/build-output/sysroot/boot/initrd.tar.img ::
+mcopy -i $OUTDIR/efi_fat.img emu-files/hexahedron-kernel.elf ::
+mcopy -i $OUTDIR/efi_fat.img emu-files/initrd.tar.img ::
 
 
 
