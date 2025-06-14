@@ -122,6 +122,7 @@ void polyaniline_copyright() {
 void polyaniline_configureOS() {
     terminal_clearScreen(terminal_fg, terminal_bg);
     terminal_drawTestTube(BOOT_LIQUID_NORMAL);
+    polyaniline_copyright();
 
     menu_drawTitleBar(TITLEBAR_DEFAULT_COLOR, "reduceOS configuration manager");
     terminal_y++;
@@ -198,6 +199,7 @@ void polyaniline_configureOS() {
 void polyaniline_bootChoice() {
     terminal_clearScreen(terminal_fg, terminal_bg);
     terminal_drawTestTube(BOOT_LIQUID_NORMAL);
+    polyaniline_copyright();
 
     menu_drawTitleBar(TITLEBAR_DEFAULT_COLOR, "Select an option to use");
     terminal_y++;
