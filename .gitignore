@@ -1,0 +1,3 @@
+build-output/
+.gdb_history
+platform/bios/*
